@@ -186,7 +186,7 @@ export default function Hero() {
 
             {/* Profile Image (Static, Rounded-Square) */}
             <img
-              src="src/assets/profile.jpg" // replace with your image path
+              src="/profile.jpg" // replace with your image path
               alt="Profile"
               style={{
                 width: "250px",
