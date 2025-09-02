@@ -1,5 +1,4 @@
-// src/components/Skills.jsx
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import skillsData from "../data/skills.js";
 
@@ -8,12 +7,31 @@ export default function Skills() {
   const bubbles = useMemo(
     () =>
       Array.from({ length: 8 }).map(() => ({
-        startX: Math.random() * 80, // vw units, more robust
-        startY: Math.random() * 60 + 10, // vh units, from 10vh - 70vh
+        startX: Math.random() * 80, // vw units
+        startY: Math.random() * 60 + 10, // vh units
         scale: Math.random() * 0.4 + 0.8,
       })),
     []
   );
+
+  // Dynamic grid column size based on screen width
+  const [gridTemplate, setGridTemplate] = useState(
+    "repeat(auto-fit, minmax(150px, 1fr))"
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 400) {
+        setGridTemplate("repeat(auto-fit, minmax(100px, 1fr))");
+      } else {
+        setGridTemplate("repeat(auto-fit, minmax(150px, 1fr))");
+      }
+    };
+
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <section
@@ -23,8 +41,6 @@ export default function Skills() {
     >
       {/* Floating bubbles background */}
       {bubbles.map((bubble, i) => (
-        // Updated motion.div inside bubbles.map
-
         <motion.div
           key={i}
           initial={{
@@ -36,13 +52,13 @@ export default function Skills() {
           animate={{
             y: [
               `${bubble.startY}vh`,
-              `${bubble.startY - Math.random() * 15}vh`, // Only move UP vertically
+              `${bubble.startY - Math.random() * 15}vh`,
               `${bubble.startY - Math.random() * 10}vh`,
               `${bubble.startY}vh`,
             ],
             x: [
               `${bubble.startX}vw`,
-              `${bubble.startX + Math.random() * 25 - 12.5}vw`, // wider left/right drift
+              `${bubble.startX + Math.random() * 25 - 12.5}vw`,
               `${bubble.startX - Math.random() * 25 + 12.5}vw`,
               `${bubble.startX}vw`,
             ],
@@ -86,7 +102,8 @@ export default function Skills() {
         <div
           className="grid"
           style={{
-            gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+            display: "grid",
+            gridTemplateColumns: gridTemplate,
             gap: "20px",
             marginTop: "32px",
           }}
