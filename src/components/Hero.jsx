@@ -13,7 +13,7 @@ export default function Hero() {
     <section
       className="section"
       id="hero"
-      style={{ position: "relative", overflow: "hidden" }}
+      style={{ position: "relative", overflow: "hidden", display:"flex", justifyContent:'center'}}
     >
       {/* --- Animated Gradient Blobs Background --- */}
       <motion.div
