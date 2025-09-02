@@ -259,12 +259,15 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 
-  .herobutton{
+  .herobutton {
     justify-content: center;
   }
 }
 
 @media (max-width: 780px) {
+  nav {
+    padding-bottom: 10px;
+  }
   .nav-inner {
     flex-direction: column;
   }
@@ -273,6 +276,17 @@ footer {
     padding-bottom: 10px;
     font-size: smaller;
   }
+  /* .tabs {
+    background: linear-gradient(
+      180deg,
+      rgba(185, 185, 185, 0.2),
+      rgba(255, 255, 255, 0)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: white;
+  } */
   .experince-box-role-heading {
     display: "inline-block";
   }
@@ -308,5 +322,13 @@ footer {
   .btn-form {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-links {
+    gap: 10px;
+    padding-bottom: 10px;
+    font-size: 8px;
   }
 }
