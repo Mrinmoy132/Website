@@ -3,6 +3,7 @@ import {
   SiHtml5,
   SiCss3,
   SiJavascript,
+  SiTypescript,
   SiReact,
   SiRedux,
   SiTailwindcss,
@@ -12,14 +13,15 @@ import {
   SiNextdotjs,
   SiMongodb,
   SiMysql,
-  SiPostgresql,
   SiGit,
   SiPostman,
   SiFigma,
+  SiJest,
   SiPython,
   SiC,
   SiCplusplus,
   SiEjs,
+  SiGraphql,
 } from "react-icons/si";
 
 export default [
@@ -27,6 +29,7 @@ export default [
   { skill: "HTML", logo: SiHtml5, color: "#E34F26" },
   { skill: "CSS", logo: SiCss3, color: "#1572B6" },
   { skill: "JavaScript", logo: SiJavascript, color: "#F7DF1E" },
+  { skill: "TypeScript", logo: SiTypescript, color: "#F7DF1E" },
   { skill: "EJS", logo: SiEjs, color: "#B4CA65" },
   { skill: "C", logo: SiC, color: "#A8B9CC" },
   { skill: "C++", logo: SiCplusplus, color: "#00599C" },
@@ -43,11 +46,12 @@ export default [
 
   // Databases
   { skill: "MongoDB", logo: SiMongodb, color: "#47A248" },
-  { skill: "SQL", logo: SiPostgresql, color: "#336791" }, // using PostgreSQL icon
   { skill: "MySQL", logo: SiMysql, color: "#4479A1" },
 
   // Tools & Software
   { skill: "Git", logo: SiGit, color: "#F05032" },
   { skill: "Postman", logo: SiPostman, color: "#FF6C37" },
   { skill: "Figma", logo: SiFigma, color: "#F24E1E" },
+  { skill: "Jest", logo: SiJest, color: "#F24E1E" },
+  { skill: "GraphQL", logo: SiGraphql, color: "#F24E1E" },
 ];
